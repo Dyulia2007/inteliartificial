@@ -28,41 +28,39 @@ const perguntas = [
                 afirmacao:
             },
             {
-                texto:"Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema."
-                afirmacao:
+                texto:"Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
+                afirmacao: "afirmacao"
             }
            
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?
-    ",
+        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona ?",
         alternativas: [
             {
-                texto:
+                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
                 afirmacao:
             },
             {
-                texto:
+                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
                 afirmacao:
             }
-            "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-            "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores."
+            
+           
         ]
     },
     {
         enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
         alternativas: [
             {
-                texto:
+                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
                 afirmacao:
             },
             {
-                texto:
+                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
                 afirmacao:
             }
-            "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-            "Criar uma imagem utilizando um gerador de imagem de IA."
+           
         ]
     },
     {
