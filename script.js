@@ -7,15 +7,17 @@ const textoResultado = document.querySelector(".texto-resultado");
 const perguntas = [
     {
         enunciado: "Você presencia uma ação de cyberbullying. O que você faz sobre?",
+
         alternativas: [
             {
-                texto: "Reportar a situação a um responsável.",
+                texto:"Reportar a situação a um responsável.",
                 afirmacao: "Você é contra o Bullying porém prefere não se envolver diretamente delegando essa responsabilidade a uma autoridade que você julga competente."
             },
             {
-                texto:  "Tenta inibir o ato enquanto está ocorrendo.",
-                afirmacao: "Você é o tipo de pessoa que não se cala diante da injustiça e faz de tudo o que está ao seu alcance para preservar um ambiente saudável e sem discriminações."
-            }    
+                texto: "Tenta inibir o ato enquanto está ocorrendo.",
+                afirmacao:"Você é o tipo de pessoa que não se cala diante da injustiça e faz de tudo o que está ao seu alcance para preservar um ambiente saudável e sem discriminações."
+
+            }   
            
         ]
     },
@@ -28,7 +30,7 @@ const perguntas = [
             },
             {
                 texto:  "Discordo, pois os altos custos do processo acaba  inviabilizando o mesmo.",
-                afirmacao: "Você é uma pessoa que se preocupa com a questão econômica, prezando o valor  dinheiro"
+                afirmacao: "Você é uma pessoa que se preocupa com a questão econômica, prezando o valor  dinheiro."
             }   
             
         ]
@@ -42,37 +44,50 @@ const perguntas = [
             },
             {
                 texto:  "Acredito que a prática de um esporte está ligada apenas ao lazer, e prefiro utilizar o meu tempo estudando  e assistindo séries.",
-                afirmacao: "Você é uma pessoa que prefere ter o seu tempo de lazer voltado a atividades culturais"
+                afirmacao: "Você é uma pessoa que prefere ter o seu tempo de lazer voltado a atividades culturais."
             }             
            
         ]
     }  
 ];
+    
+    
 let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta(){
+    if(atual >= perguntas.length){
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
+    textoResultado.textContent = "";
     mostraAlternativas();
 }
+
 function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas){
-    const botaoAlternativas = document.createElement("button");
-    botaoAlternativas.textContent = alternativa.texto;
-    botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-    caixaAlternativas.appendChild(botaoAlternativas)
-        }
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas)
     }
+}
 
 function respostaSelecionada(opcaoSelecionada){
-    const afirmacao = opcaoSelecionada.afirmacoes;
-    historiaFinal = afirmacao
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
-mostraPergunta();
+function mostraResultado(){
+    caixaPerguntas.textContent = "Olha só o que podemos afirmar sobre você...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
 
+mostraPergunta(); 
